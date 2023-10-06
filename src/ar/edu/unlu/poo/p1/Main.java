@@ -31,7 +31,5 @@ public class Main {
         System.out.println(club.listarSociosPorSuscripcion(Suscripcion.BASICA));
         System.out.println(club.listarSociosPorSuscripcion(Suscripcion.INTERMEDIA));
         System.out.println(club.listarSociosPorSuscripcion(Suscripcion.DESTACADA));
-
-
     }
 }

@@ -36,8 +36,28 @@ public class Socio {
                         + "------------------------------------";
     }
 
-    public Suscripcion getSuscripcionSocio(){
-        return suscripcion;
+
+    public String getNombre() {
+        return nombre;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public Suscripcion getSuscripcion() {
+        return suscripcion;
+    }
 }

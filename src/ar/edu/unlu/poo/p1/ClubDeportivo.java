@@ -52,7 +52,7 @@ public class ClubDeportivo {
     public String listarSociosPorSuscripcion(Suscripcion suscripcion){
         String listaDeSociosPorSuscripcion = "";
         for (int i = 0; i < socios.size(); i++) {
-            if(socios.get(i).getSuscripcionSocio() == suscripcion){
+            if(socios.get(i).getSuscripcion() == suscripcion){
                 listaDeSociosPorSuscripcion += socios.get(i);
             }
         }
@@ -61,5 +61,13 @@ public class ClubDeportivo {
         }
 
         return "--- LISTA DE SOCIOS POR SUSCRIPCION " + suscripcion + "---\n" + listaDeSociosPorSuscripcion;
+    }
+
+    public List<Actividad> getActividades() {
+        return actividades;
+    }
+
+    public List<Socio> getSocios() {
+        return socios;
     }
 }
