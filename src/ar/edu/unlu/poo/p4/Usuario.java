@@ -24,8 +24,8 @@ public class Usuario {
         System.out.println("-----------------------");
         System.out.println("");
         System.out.println("Saldo: "+this.cuenta.getSaldo());
-        System.out.println("Giro en descubierto: "+this.cuenta.getLimiteGiroDescubierto()+"("+this.cuenta.getGiroDescubierto()+")");
-        System.out.println("Inversiones: "+this.cuenta.getMontoInvertido()+"("+this.cuenta.getInteresAGanar()+")");
+        System.out.println("Giro en descubierto: "+this.cuenta.getLimiteGiroDescubierto()+"(GiroDescubierto: "+this.cuenta.getGiroDescubierto()+")");
+        System.out.println("Inversiones: "+this.cuenta.getMontoInvertido()+" (Interés a ganar: "+this.cuenta.getInteresAGanar()+")");
         System.out.println("");
         System.out.println("--- Cuenta crédito ----");
         System.out.println("");
@@ -46,7 +46,6 @@ public class Usuario {
         }else {
             return this.cuenta.gastar(monto);
         }
-
     }
 
     /**
@@ -58,7 +57,37 @@ public class Usuario {
         return this.cuenta.gastar(monto);
     }
 
-    // TODO de aca para abajo falta implementar todas las operaciones posibles sobre la cuenta credito.
+    public void realizarDeposito(double monto){
+        cuenta.depositar(monto);
+    }
+
+    public boolean realizarInversion(double monto){
+        return cuenta.invertir(monto);
+    }
+
+    public double recuperarInversionRealizada(){
+        return cuenta.recuperarInversion();
+    }
+
+    public boolean comprarConCredito(double monto){
+        return cuentaCredito.comprar(monto);
+    }
+
+    public boolean pagarConCredito(double monto, int idCompra){
+        return cuentaCredito.pagar(monto, idCompra);
+    }
+
+    public double obtenerSaldoDeudorCompraCredito(int idCompra){
+        return cuentaCredito.getSaldoDeudorCompra(idCompra);
+    }
+
+    public double obtenerSaldoDeudorCreditoTotal(){
+        return cuentaCredito.getSaldoDeudor();
+    }
+
+    public double obtenerMontoDisponibleParaCompras(){
+        return cuentaCredito.getMontoDisponibleParaCompras();
+    }
 }
 
 

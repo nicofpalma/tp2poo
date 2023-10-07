@@ -5,30 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f51fb0f-fc2f-4113-8d8b-d89476bde174" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Agencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Compra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Paquete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Proveedor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/TipoProveedor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Academia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Alumno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Diagramacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Disciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Nivel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Profesor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Salon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Cuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/CuentaCredito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/Empleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/EmpleadoAsalariado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/EmpleadoComision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/EmpleadoComisionSalarioBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/EmpleadoPasante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/EmpleadoPorHora.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Combustible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Empleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Expendedor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Informes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Venta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Biblioteca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Diario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Libro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Publicacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Revista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Socio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Tesis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Circulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Cuadrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Cubo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Esfera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Figura3d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/FiguraGeometrica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Paralelepipedo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Rectangulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Tetraedro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Triangulo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p1/ClubDeportivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p1/ClubDeportivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p1/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p1/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p10/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/CuentaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/CuentaCredito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p4/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p5/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p6/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p7/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p8/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/edu/unlu/poo/p9/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +88,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nico\proyectosgit\tp2poo\src\ar\edu\unlu\poo\p8" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +103,8 @@
       <updated>1696528809434</updated>
       <workItem from="1696528810511" duration="15698000" />
       <workItem from="1696560027573" duration="1199000" />
-      <workItem from="1696566214490" duration="11046000" />
+      <workItem from="1696566214490" duration="11227000" />
+      <workItem from="1696597624444" duration="34817000" />
     </task>
     <servers />
   </component>

@@ -6,9 +6,15 @@ public class Cuenta {
     private double limiteGiroDescubierto;
     private double giroDescubierto;
     private double saldoInvertido;
-    public static final double INTERES_POR_INVERSION = 0.4;
-    public static final double PLAZO_DIAS_INVERSION = 30;
+    private static final double INTERES_POR_INVERSION = 0.4;
+    private static final int PLAZO_DIAS_INVERSION = 60;
     private LocalDate fechaInversion;
+    private boolean precancelarInversion;
+
+    public Cuenta(double saldo, double limiteGiroDescubierto, boolean precancelarInversion) {
+        this(saldo, limiteGiroDescubierto);
+        this.precancelarInversion = precancelarInversion;
+    }
 
     public Cuenta(double saldo, double limiteGiroDescubierto) {
         this.saldo = saldo;
@@ -28,12 +34,23 @@ public class Cuenta {
 
     public boolean gastar(double monto) {
         boolean res = false;
-
-        if ((this.saldo + (this.limiteGiroDescubierto-this.giroDescubierto)) >= monto) {
+        if ((this.saldo + saldoInvertido + (this.limiteGiroDescubierto-this.giroDescubierto)) >= monto) {
             if (this.saldo < monto) {
                 //Giro en descubierto
-                this.giroDescubierto += monto - this.saldo;
-                this.saldo = 0;
+                if(precancelarInversion){
+                    double saldoInvertidoRecuperado = recuperarInversion();
+                    if(monto < saldo + saldoInvertidoRecuperado){
+                        saldo += saldoInvertidoRecuperado;
+                        saldo -= monto;
+                    } else {
+                        saldo += saldoInvertidoRecuperado;
+                        giroDescubierto += monto - saldo;
+                        saldo = 0;
+                    }
+                } else {
+                    this.giroDescubierto += monto - this.saldo;
+                    this.saldo = 0;
+                }
             }else {
                 // El saldo me alzanza para el gasto
                 this.saldo -= monto;
@@ -50,7 +67,17 @@ public class Cuenta {
      * @param monto
      */
     public void depositar(double monto) {
-        // TODO Implementar....
+        if(giroDescubierto > 0){
+            double diferencia = giroDescubierto - monto;
+            if(diferencia < 0){
+                monto += Math.abs(diferencia);
+                giroDescubierto = 0;
+            } else {
+                giroDescubierto = diferencia;
+            }
+        } else {
+            saldo += monto;
+        }
     }
 
     /**
@@ -60,12 +87,17 @@ public class Cuenta {
      *
      * Tambien establece la fecha de inversión.
      *
-     * @param monto
-     * @return
+     * @param monto El monto a invertir
+     * @return exito Un booleano que indica el exito de la operacion
      */
     public boolean invertir(double monto) {
-        // TODO Implementar ...
-        return true;
+        boolean exito = false;
+        if(saldo >= monto && saldoInvertido == 0){
+            saldoInvertido = monto;
+            fechaInversion = LocalDate.now();
+            exito = true;
+        }
+        return exito;
     }
 
     /**
@@ -73,9 +105,19 @@ public class Cuenta {
      * hayan pasado los N días que dura la inversión.
      * @return
      */
-    public boolean recuperarInversion() {
-        // TODO Implementar
-        return true;
+    public double recuperarInversion() {
+        double inversionRecuperada;
+        LocalDate hoy = LocalDate.now();
+        if(hoy.isAfter(fechaInversion.plusDays(PLAZO_DIAS_INVERSION))){
+            inversionRecuperada = saldoInvertido + (saldoInvertido * Cuenta.INTERES_POR_INVERSION);
+        } else if (hoy.isAfter(fechaInversion.plusDays(30)) || hoy.isEqual(fechaInversion.plusDays(30))) {
+            inversionRecuperada = saldoInvertido + (saldoInvertido * 0.04);
+        } else {
+            inversionRecuperada = saldoInvertido;
+        }
+        saldoInvertido = 0;
+        fechaInversion = null;
+        return inversionRecuperada;
     }
 
     public double getSaldo() {

@@ -8,6 +8,7 @@ public class CuentaCredito {
     private List<Double> compras;
     private List<Double> pagado;
 
+    private static final double INTERES_POR_COMPRA = 0.05;
 
     public CuentaCredito(double limite) {
         this.limite = limite;
@@ -22,8 +23,17 @@ public class CuentaCredito {
      * @return boolean: true si la compra fue existosa, false en caso contrario.
      */
     public boolean comprar(double monto) {
-        // TODO Implementar ..
-        return true;
+        boolean exito = false;
+        // monto total a pagar con el recargo del 5%
+        double montoTotal = monto * (monto * CuentaCredito.INTERES_POR_COMPRA);
+
+        // monto total es menor o igual al limite de gasto disponible
+        if(montoTotal <= limite){
+            compras.add(montoTotal);
+            limite -= montoTotal;
+            exito = true;
+        }
+        return exito;
     }
 
     /**
@@ -36,8 +46,17 @@ public class CuentaCredito {
      * @return
      */
     public boolean pagar(double monto, int indiceCompra) {
-        // TODO implementar ...
-        return true;
+        boolean exito = false;
+        if(indiceCompra >= 0 && indiceCompra < compras.size()){
+            double saldoPendiente = compras.get(indiceCompra) - pagado.get(indiceCompra);
+
+            if(monto <= saldoPendiente){
+                pagado.set(indiceCompra, pagado.get(indiceCompra) + monto);
+                limite += monto;
+                exito = true;
+            }
+        }
+        return exito;
     }
 
     /**
@@ -47,8 +66,12 @@ public class CuentaCredito {
      * @return
      */
     public double getSaldoDeudorCompra(int indiceCompra) {
-        // TODO falta implementar ..
-        return 0.0d;
+        double saldoDeudor = 0;
+        if(indiceCompra <= 0 && indiceCompra < compras.size()){
+            saldoDeudor = compras.get(indiceCompra) - pagado.get(indiceCompra);
+            saldoDeudor += (saldoDeudor * INTERES_POR_COMPRA);
+        }
+        return saldoDeudor;
     }
 
     /**
@@ -56,8 +79,14 @@ public class CuentaCredito {
      * @return double
      */
     public double getSaldoDeudor() {
-        // TODO falta implementar...
-        return 0.0d;
+        double saldoDeudorTotal = 0;
+        for (int i = 0; i < compras.size(); i++) {
+            double saldoPendiente = compras.get(i) - pagado.get(i);
+            saldoPendiente += (saldoPendiente * INTERES_POR_COMPRA);
+            saldoDeudorTotal += saldoPendiente;
+        }
+
+        return saldoDeudorTotal;
     }
 
     /**
@@ -66,8 +95,15 @@ public class CuentaCredito {
      * @return double: el saldo disponible para realizar compras.
      */
     public double getMontoDisponibleParaCompras() {
-        // TODO falta implementar ...
-        return 0.0d;
+        double saldoDisponible = limite;
+        for (int i = 0; i < compras.size(); i++) {
+            double saldoPendiente = compras.get(i) - pagado.get(i);
+            if(saldoPendiente > 0){
+                saldoDisponible -= saldoPendiente;
+            }
+        }
+
+        return saldoDisponible;
     }
 
 }
