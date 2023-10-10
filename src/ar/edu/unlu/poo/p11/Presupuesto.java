@@ -16,6 +16,11 @@ public class Presupuesto {
         this.cliente = cliente;
     }
 
+    public Alquiler generarAlquiler(){
+        Alquiler alquiler = new Alquiler(vehiculo, fechaInicio, fechaFin, cliente, calcularPresupuesto());
+        return alquiler;
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -32,7 +37,8 @@ public class Presupuesto {
         return vehiculo;
     }
 
-    public double calcularPresupuesto() {
+
+    public final double calcularPresupuesto() {
         long dias = ChronoUnit.DAYS.between(fechaInicio, fechaFin);
         return vehiculo.calcularCostoAlquiler((int) dias);
     }

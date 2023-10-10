@@ -2,38 +2,24 @@ package ar.edu.unlu.poo.p11;
 
 import java.time.LocalDate;
 
-public class Alquiler {
-    private Presupuesto presupuesto;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
-    private double saldoAPagar;
+public class Alquiler extends Presupuesto{
+    private final double saldoAPagar;
 
-    public Alquiler(Presupuesto presupuesto, LocalDate fechaInicio, LocalDate fechaFin) {
-        this.presupuesto = presupuesto;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.saldoAPagar = calcularSaldoAPagar();
+    public Alquiler(Vehiculo vehiculo, LocalDate fechaInicio, LocalDate fechaFin, Cliente cliente, double saldoAPagar) {
+        super(vehiculo, fechaInicio, fechaFin, cliente);
+        this.saldoAPagar = saldoAPagar;
+        cliente.agregarAlquiler(this);
     }
-
-
-    private double calcularSaldoAPagar() {
-        return presupuesto.calcularPresupuesto();
-    }
-
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
     public double getSaldoAPagar() {
         return saldoAPagar;
     }
 
-    public Presupuesto getPresupuesto() {
-        return presupuesto;
+    public String generarInformeDeAlquiler(){
+        return "--- ALQUILER ---\n" +
+                "VEHICULO: " + getVehiculo().getClass().getSimpleName() + "\n"
+                + "FECHA INICIO: " + getFechaInicio() + "\n"
+                + "FECHA FIN: " + getFechaFin() + "\n"
+                + "CLIENTE: " + getCliente().getNombre();
     }
 }
 

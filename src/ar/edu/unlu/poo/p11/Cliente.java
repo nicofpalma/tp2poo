@@ -7,7 +7,6 @@ public class Cliente {
     private String nombre;
     private String direccion;
     private String telefono;
-    private List<Presupuesto> presupuestos = new ArrayList<>();
     private List<Alquiler> alquileres = new ArrayList<>();
 
     public Cliente(String nombre, String direccion, String telefono) {
@@ -16,9 +15,12 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    // Métodos para agregar presupuestos y alquileres al cliente
-    public void agregarPresupuesto(Presupuesto presupuesto) {
-        presupuestos.add(presupuesto);
+    public double montoTotalAlquileres(){
+        double montoTotal = 0;
+        for (int i = 0; i < alquileres.size(); i++) {
+            montoTotal += alquileres.get(i).getSaldoAPagar();
+        }
+        return montoTotal;
     }
 
     public void agregarAlquiler(Alquiler alquiler) {
@@ -41,10 +43,5 @@ public class Cliente {
         return alquileres;
     }
 
-    public List<Presupuesto> getPresupuestos() {
-        return presupuestos;
-    }
-
-    // Otros getters y setters
 }
 
